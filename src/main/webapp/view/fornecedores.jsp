@@ -48,7 +48,7 @@
 				</tr>
 
 				<tr>
-					<td colspan="4"><input type="number" id="numero" name="numero"
+					<td colspan="4"><input type="number" id="numero" name="numero" min="0"
 						placeholder="numero" value='${fornecedores.numero }'></td>
 				</tr>
 
@@ -109,8 +109,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="fo" items="${listaFornecedores }">
-						<tr>
+					<c:forEach var="fo" items="${listaFornecedores }" >
+						<tr class="forn">
 							<td>${fo.cnpj }</td>
 							<td>${fo.nome }</td>
 							<td>${fo.telefone }</td>

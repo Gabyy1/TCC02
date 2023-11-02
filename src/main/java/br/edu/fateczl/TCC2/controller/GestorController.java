@@ -37,6 +37,30 @@ public class GestorController {
         return new ModelAndView("gestor");
     }
 	
+	@RequestMapping(value = "/gestorAddFunc", method = RequestMethod.POST)
+	public String addFuncionario(@RequestParam Map<String, String> params) throws ClassNotFoundException, SQLException {
+	    // Recuperar os parâmetros do formulário para adicionar um funcionário
+	    String cpf = params.get("cpf");
+	    String nome = params.get("nome");
+	    String email = params.get("email");
+	    String senha = params.get("senha");
+	    int cargo = Integer.parseInt(params.get("cargo"));
+
+	    // Crie um novo objeto Funcionario e defina os valores
+	    Funcionario f = new Funcionario();
+	    f.setCpf(cpf);
+	    f.setNome(nome);
+	    f.setEmail(email);
+	    f.setSenha(senha);
+	    f.setCargo(cargo);
+
+	    // Chame o método no GestorDao para adicionar o funcionário
+	    gDao.cadastraFuncionario(f); // supondo que exista um método para adicionar funcionário
+
+	    return "redirect:/gestor"; // redirecionar de volta para a página de gestor após a adição
+	}
+	
+	
 	@RequestMapping(value = "/deleteFuncionario/{cpf}/{email}", method = RequestMethod.GET)
     public String deleteFuncionario(@PathVariable("cpf") String cpf, @PathVariable("email") String email) throws ClassNotFoundException, SQLException {
 		Funcionario f = new Funcionario();

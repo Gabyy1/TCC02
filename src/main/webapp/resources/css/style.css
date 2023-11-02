@@ -1,8 +1,16 @@
 @charset "ISO-8859-1";
 
+
+/*Painel Login*/
+.painel{
+  padding: 40px 80px 50px 50px;
+
+}
+
+
 /* Login */
 .loginform {
-	width: 300px;
+	width: 450px;
 	margin: auto;
 	overflow: hidden;
 	background: #ffffff;
@@ -11,6 +19,7 @@
 	padding: 10px 20px 20px 20px;
 	position: relative;
 	padding-bottom: 80px;
+	margin-right:-30px;
 	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -18,7 +27,7 @@
 	text-align: center;
 }
 
-.loginform .inputlogin {
+.loginform .inputlogin  {
 	font-family: 'open_sanslight';
 	font-size: 1em;
 	display: block;
@@ -28,8 +37,9 @@
 	border: 1px solid #ddd;
 	transition: border-width 0.2s ease;
 	border-radius: 50px;
-	color: #ccc;
+	color: black;
 }
+
 
 .loginform input[type="submit"] {
 	width: 100%;
@@ -42,7 +52,7 @@
 	cursor: pointer;
 	margin-top: 20px;
 	max-height: 60px;
-	border-radius: 0 0 2px 2px;
+	border-radius: 18px;
 	transition: all 0.1s ease-out;
 	border-bottom-width: 7px;
 }
@@ -209,7 +219,7 @@ body, div, form, table {
 
 body {
 	font-family: Arial, sans-serif;
-	background-color: #f4f4f4;
+	background-image: url("estoque.jpeg");
 	margin: 0;
 	padding: 0;
 }
@@ -271,6 +281,14 @@ h2 {
 	color: red;
 }
 
+h5{
+	margin-top: 40px;
+	color: white;
+	font-family: didot;
+	font-size: 70px;
+	font-weight: bold;
+}
+
 /* Estilos para a tabela de produtos */
 table {
 	width: 100%;
@@ -308,5 +326,14 @@ table th {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Lista Fornecedor*/
+.forn{
+	background-color: white;
+}
+
+/* Lista Produto*/
+.prod{
+	background-color: white;
+}
 /* Estoque */
 /* Relatório */

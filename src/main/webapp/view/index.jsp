@@ -10,24 +10,28 @@
 <title>Login</title>
 </head>
 <body>
+  <div class="painel">
+		<h5>INVENTORY TRACKER</h5>
 	<div class="loginform">
 
-		<h1>Olá, seja bem vindo!</h1>
-		<h3>Efetue o login para continuar</h3>
+		<h1>   Olá, seja bem vindo!</h1>
+		<h3>   Efetue o login para continuar</h3>
 
 		<form action="index" method="post">
 			<div class="loginemail">
-				<label for="email" class="lbl">Email</label> <input
+				<label for="email" class="lbl"></label> <input
 					class="inputlogin" type="text" id="email" name="email"
 					placeholder="Digite seu email">
 			</div>
 			<div class="loginsenha">
-				<label for="senha" class="lbl">Senha</label> <input
+				<label for="senha" class="lbl"></label> <input
 					class="inputlogin" type="password" id="senha" name="senha"
 					placeholder="Digite sua senha">
 			</div>
 			<input type="submit" id="btn" name="btn" value="Logar">
+			
 		</form>
 	</div>
+			</div>
 </body>
 </html>

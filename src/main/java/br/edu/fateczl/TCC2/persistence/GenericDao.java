@@ -17,7 +17,7 @@ public class GenericDao {
 		// atualizar a database
 		String dbName = "tcc02";
 		String user = "gabrielly";
-		String senha = "123456";
+		String senha = "1820gaby";
 		Class.forName("net.sourceforge.jtds.jdbc.Driver");
 		String connect = String.format("jdbc:jtds:sqlserver://%s:1433;databaseName=%s;user=%s;password=%s", hostName,
 				dbName, user, senha);

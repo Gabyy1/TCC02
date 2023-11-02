@@ -21,7 +21,7 @@ public class FornecedorDao implements IFornecedorDao {
 	GenericDao gDao;
 
 	// ----------------------------- [FORNECEDOR]---------------------------//
-
+	@Override
 	public String cadastraFornecedor(Fornecedor fo) throws SQLException, ClassNotFoundException {
 		Connection c = gDao.getConnection();
 		String sql = "{CALL sp_manter_fornecedor(?,?,?,?,?,?,?,?,?,?,?,?)}";
@@ -47,6 +47,7 @@ public class FornecedorDao implements IFornecedorDao {
 		return saida;
 	}
 
+	@Override
 	public String editaFornecedor(Fornecedor fo) throws SQLException, ClassNotFoundException {
 		Connection c = gDao.getConnection();
 		String sql = "{CALL sp_manter_fornecedor(?,?,?,?,?,?,?,?,?,?,?,?)}";
@@ -72,7 +73,7 @@ public class FornecedorDao implements IFornecedorDao {
 		return saida;
 	}
 
-
+	@Override
 	public String excluiFornecedor(Fornecedor fo) throws SQLException, ClassNotFoundException {
 		Connection c = gDao.getConnection();
 		String sql = "{CALL sp_manter_fornecedor(?,?,?,?,?,?,?,?,?,?,?,?)}";
@@ -156,6 +157,7 @@ public class FornecedorDao implements IFornecedorDao {
 		return fornecedores;
 	}
 
+	@Override
 	public List<Fornecedor> buscaFornecedores(String nome) throws SQLException, ClassNotFoundException {
 		List<Fornecedor> fornecedor = new ArrayList<>();
 		Connection c = gDao.getConnection();

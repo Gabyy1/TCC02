@@ -44,9 +44,9 @@ public class LoginController {
 			if (u.getTipo().equalsIgnoreCase("G")) {
 				view = "redirect:/gestor";
 			} 
-			// else if (u.getTipo().equalsIgnoreCase("F")) {
-			//	view = "redirect:/funcionario";
-			//}
+			 else if (u.getTipo().equalsIgnoreCase("F")) {
+				view = "redirect:/fornecedores";
+			}
 		}
 		return view;
 	}
