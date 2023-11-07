@@ -28,7 +28,7 @@
 					class="inputlogin" type="password" id="senha" name="senha"
 					placeholder="Digite sua senha">
 			</div>
-			<input type="submit" id="btn" name="btn" value="Logar">
+			<input type="submit" id="btn" name="btn" value="Entrar">
 			
 		</form>
 	</div>

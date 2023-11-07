@@ -44,7 +44,7 @@
 				</thead>
 				<tbody>
 					<c:forEach var="p" items="${listaEstoque }">
-						<tr>
+						<tr class="est">
 							<td>${p.codigo }</td>
 							<td>${p.nome }</td>
 							<td>${p.vencimento }</td>

@@ -36,7 +36,7 @@ public class LoginController {
 
 		String view = "";
 
-		if (botao.equalsIgnoreCase("logar")) {
+		if (botao.equalsIgnoreCase("Entrar")) {
 			u = uDao.getLogin(email, senha);
 
 			System.out.println(u.getEmail());
