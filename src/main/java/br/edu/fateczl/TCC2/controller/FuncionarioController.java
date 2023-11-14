@@ -22,12 +22,12 @@ public class FuncionarioController {
 	@Autowired
 	FuncionarioDao fDao;
 	
-	@RequestMapping(name = "funcionario", value = "/produto", method = RequestMethod.GET)
+	@RequestMapping(name = "funcionario", value = "/funcionario", method = RequestMethod.GET)
 	public ModelAndView init(ModelMap model) {
 		return new ModelAndView("funcionario");
 	}
 	
-	@RequestMapping(name = "funcionario", value = "/produto", method = RequestMethod.POST)
+	@RequestMapping(name = "funcionario", value = "/funcionario", method = RequestMethod.POST)
 	public ModelAndView findfuncionarios(@RequestParam Map<String, String> params, ModelMap model) {
 		String cmd = params.get("button");
 		List<Funcionario> listaFuncionarios = new ArrayList<Funcionario>();

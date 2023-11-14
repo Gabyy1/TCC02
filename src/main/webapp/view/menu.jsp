@@ -11,6 +11,7 @@
 				<li><a href="produto">Produtos</a></li>
 				<li><a href="estoque">Estoque</a></li>
 				<li><a href="relatorio">Relatório</a></li>
+				<li><a href="gestorAddFunc">Funcionario</a></li>
 				<li><a class="btn-sair" href="index"
 					onclick="return confirm('Tem certeza que deseja sair?')">Sair</a></li>
 			</ul>
