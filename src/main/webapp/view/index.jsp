@@ -11,6 +11,7 @@
 </head>
 <body>
   <div class="painel">
+  		<img src="estoque.jpeg">
 		<h5>INVENTORY TRACKER</h5>
 	<div class="loginform">
 

@@ -10,6 +10,14 @@
 <title>Adicionar Funcionarios</title>
 </head>
 <body>
+	<div>
+		<jsp:include page="menu.jsp" />
+		<br />
+	</div>
+		<div>
+		<form action="gestorAddFunc" method="post">
+		</form>
+		</div>
 	<header>
 		<a class="btn-voltar" href="gestor"> <img class="icon-voltar"
 			src='<c:url value="./resources/back.svg" />'>

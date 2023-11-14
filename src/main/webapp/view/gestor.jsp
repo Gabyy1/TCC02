@@ -9,6 +9,10 @@
 <title>Inventory Tracker | Gestor</title>
 </head>
 <body>
+<div>
+		<jsp:include page="menu.jsp" />
+		<br />
+	</div>
 	<header>
 		<div class="gheader">
 			<span>Olá, seja bem vindo!</span> <a class="btn-sair" href="index"

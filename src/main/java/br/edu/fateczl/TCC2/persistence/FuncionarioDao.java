@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import br.edu.fateczl.TCC2.model.Fornecedor;
+import br.edu.fateczl.TCC2.model.Funcionario;
 import br.edu.fateczl.TCC2.model.Produto;
 
 @Repository
@@ -211,5 +212,106 @@ public class FuncionarioDao implements IFuncionarioDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	// ----------------------------- [FUNCIONARIO] ---------------------------------//
+	public String cadastraFuncionario(Funcionario f) throws ClassNotFoundException, SQLException {
+		Connection c = gDao.getConnection();
+		String sql = "{CALL sp_manter_funcionario (?,?,?,?,?,?)}";
+		CallableStatement cs = c.prepareCall(sql);
+		cs.setString(1, "I");
+		cs.setString(2, f.getCpf());
+		cs.setString(3, f.getNome());
+		cs.setString(4, f.getEmail());
+		cs.setString(5, f.getSenha());
+		cs.setInt(6, f.getCargo());
+		cs.registerOutParameter(13, Types.VARCHAR);
 
+		cs.execute();
+		String saida = cs.getString(13);
+		cs.close();
+		c.close();
+
+		return saida;
+	}
+
+	public String editaFuncionario(Funcionario f) throws ClassNotFoundException, SQLException {
+		Connection c = gDao.getConnection();
+		String sql = "{CALL sp_manter_funcionario (?,?,?,?,?,?)}";
+		CallableStatement cs = c.prepareCall(sql);
+		cs.setString(1, "U");
+		cs.setString(2, f.getCpf());
+		cs.setString(3, f.getNome());
+		cs.setString(4, f.getEmail());
+		cs.setString(5, f.getSenha());
+		cs.setInt(6, f.getCargo());
+		cs.registerOutParameter(13, Types.VARCHAR);
+
+		cs.execute();
+		String saida = cs.getString(13);
+		cs.close();
+		c.close();
+
+		return saida;
+	}
+
+	public String excluiFuncionario(Funcionario f) throws ClassNotFoundException, SQLException {
+		Connection c = gDao.getConnection();
+		String sql = "{CALL sp_manter_funcionario (?,?,?,?,?,?)}";
+		CallableStatement cs = c.prepareCall(sql);
+		cs.setString(1, "D");
+		cs.setString(2, f.getCpf());
+		cs.setString(3, f.getNome());
+		cs.setString(4, f.getEmail());
+		cs.setString(5, f.getSenha());
+		cs.setInt(6, f.getCargo());
+		cs.registerOutParameter(13, Types.VARCHAR);
+
+		cs.execute();
+		String saida = cs.getString(13);
+		cs.close();
+		c.close();
+
+		return saida;
+	}
+
+	public Funcionario pesquisaFuncionario(Funcionario f) throws ClassNotFoundException, SQLException {
+		Connection c = gDao.getConnection();
+		String sql = "SELECT cpf, nome, email, cargo From funcionario WHERE cpf = ?";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setString(1, f.getCpf());
+		ResultSet rs = ps.executeQuery();
+		if (rs.next()) {
+		f.setCpf(rs.getString("cpf"));
+		f.setNome(rs.getString("nome"));
+		f.setEmail(rs.getString("email"));
+		f.setCargo(rs.getInt("cargo"));
+		}
+
+		rs.close();
+		ps.close();
+		c.close();
+		return f;
+	}
+
+	public List<Funcionario> listaFuncionarios() throws ClassNotFoundException, SQLException {
+		List<Funcionario> funcionarios = new ArrayList<>();
+		Connection c = gDao.getConnection();
+		String sql = "SELECT cpf, nome, email, \r\n"
+				+ "	cargo FROM fn_listarfuncionario()";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			Funcionario f = new Funcionario();
+			f.setCpf(rs.getString("cpf"));
+			f.setNome(rs.getString("nome"));
+			f.setEmail(rs.getString("email"));
+			f.setCargo(rs.getInt("cargo"));
+			
+			funcionarios.add(f);
+		}
+		rs.close();
+		ps.close();
+		c.close();
+		return funcionarios;
+	}
 }
